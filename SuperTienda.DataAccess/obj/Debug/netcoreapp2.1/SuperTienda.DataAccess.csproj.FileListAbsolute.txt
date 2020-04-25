@@ -1,0 +1,5 @@
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.DataAccess\bin\Debug\netcoreapp2.1\SuperTienda.DataAccess.deps.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.DataAccess\bin\Debug\netcoreapp2.1\SuperTienda.DataAccess.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.DataAccess\obj\Debug\netcoreapp2.1\SuperTienda.DataAccess.csprojAssemblyReference.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.DataAccess\obj\Debug\netcoreapp2.1\SuperTienda.DataAccess.AssemblyInfoInputs.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.DataAccess\obj\Debug\netcoreapp2.1\SuperTienda.DataAccess.AssemblyInfo.cs

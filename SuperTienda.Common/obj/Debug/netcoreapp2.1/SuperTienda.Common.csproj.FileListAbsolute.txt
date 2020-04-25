@@ -1,0 +1,5 @@
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.Common\bin\Debug\netcoreapp2.1\SuperTienda.Common.deps.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.Common\bin\Debug\netcoreapp2.1\SuperTienda.Common.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.Common\obj\Debug\netcoreapp2.1\SuperTienda.Common.csprojAssemblyReference.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.Common\obj\Debug\netcoreapp2.1\SuperTienda.Common.AssemblyInfoInputs.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.Common\obj\Debug\netcoreapp2.1\SuperTienda.Common.AssemblyInfo.cs
