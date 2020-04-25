@@ -1,0 +1,11 @@
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\bin\Debug\netcoreapp2.1\SuperTienda.ServiceApp.deps.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\bin\Debug\netcoreapp2.1\SuperTienda.ServiceApp.runtimeconfig.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\bin\Debug\netcoreapp2.1\SuperTienda.ServiceApp.runtimeconfig.dev.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\bin\Debug\netcoreapp2.1\SuperTienda.ServiceApp.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\obj\Debug\netcoreapp2.1\SuperTienda.ServiceApp.csprojAssemblyReference.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\obj\Debug\netcoreapp2.1\SuperTienda.ServiceApp.RazorAssemblyInfo.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\obj\Debug\netcoreapp2.1\SuperTienda.ServiceApp.RazorAssemblyInfo.cs
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\obj\Debug\netcoreapp2.1\SuperTienda.ServiceApp.AssemblyInfoInputs.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\obj\Debug\netcoreapp2.1\SuperTienda.ServiceApp.AssemblyInfo.cs
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.ServiceApp\obj\Debug\netcoreapp2.1\SuperTienda.ServiceApp.RazorTargetAssemblyInfo.cache
