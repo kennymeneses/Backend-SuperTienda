@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SuperTienda.Common\SuperTienda.Common.csproj" />
+    <ProjectReference Include="..\SuperTienda.DataAccess\SuperTienda.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

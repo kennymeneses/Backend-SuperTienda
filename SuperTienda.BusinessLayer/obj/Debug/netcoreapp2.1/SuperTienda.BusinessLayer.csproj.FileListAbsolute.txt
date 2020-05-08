@@ -1,0 +1,13 @@
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.deps.json
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.pdb
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.Common.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.DataAccess.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.Common.pdb
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\bin\Debug\netcoreapp2.1\SuperTienda.DataAccess.pdb
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\obj\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\obj\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\obj\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.AssemblyInfo.cs
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\obj\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.csproj.CopyComplete
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\obj\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.dll
+C:\Users\San Miguel\Desktop\Proyectos\Backends\supertienda-servicio\SolSuperTiendaService\SuperTienda.BusinessLayer\obj\Debug\netcoreapp2.1\SuperTienda.BusinessLayer.pdb
