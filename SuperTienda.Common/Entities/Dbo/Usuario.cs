@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SuperTienda.Common.Entities
 {
-    [Table("Usuario", Schema ="dbo")]
+    [Table("Usuarios", Schema ="dbo")]
     public class Usuario : BaseEntityLog
     {
         [Key]
@@ -15,7 +15,7 @@ namespace SuperTienda.Common.Entities
         [Column("IdUsuario")]
         public int Id { get; set; }
 
-        [Column("Nombre")]
+        [Column("Nombres")]
         public string Nombres { get; set; }
 
         [Column("Apellidos")]

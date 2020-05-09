@@ -81,6 +81,7 @@ namespace SuperTienda.BusinessLayer.Manager.UsuarioManagement
             usuario.Nombres = input.nombres;
             usuario.Apellidos = input.apellidos;
             usuario.Email = input.email;
+            usuario.Password = input.contrasena;
             usuario.ImagenUrl = input.imagenurl;
             usuario.Estado = input.estado;
 

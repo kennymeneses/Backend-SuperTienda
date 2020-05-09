@@ -10,7 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
-using SuperTienda.BusinessLayer.Manager.SubCategoriaManagement;
+using SuperTienda.BusinessLayer.Manager.ProductoManagement;
 using SuperTienda.Common.BussinesObjects.Dbo;
 using SuperTienda.Common.Configuration;
 using SuperTienda.Common.Core;
@@ -20,15 +20,15 @@ using SuperTienda.DataAccess.Core;
 
 namespace SuperTienda.ServiceApp.Controllers
 {
-    [Route("api/subcategorias")]
+    [Route("api/productos")]
     [ApiController]
-    public class SubCategoriaController : BaseController
+    public class ProductoController : BaseController
     {
 
-        ISubCategoriaManager _manager;
-        ILogger<SubCategoriaController> _logger;
+        IProductoManager _manager;
+        ILogger<ProductoController> _logger;
 
-        public SubCategoriaController(ISubCategoriaManager manager, ILogger<SubCategoriaController> logger) : base(manager, logger)
+        public ProductoController(IProductoManager manager, ILogger<ProductoController> logger):base(manager, logger)
         {
 
             _manager = manager;
@@ -39,26 +39,53 @@ namespace SuperTienda.ServiceApp.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(DataQuery), 200)]
         [ProducesResponseType(typeof(DataQuery), 404)]
-        public IActionResult Get(string texto = "", int pagina = 0,int tamanio =0)
+        public IActionResult Get(string texto = "", int pagina = 0, int tamanio = 10)
         {
+
             try
             {
-                SubCategoriaQueryInput input = new SubCategoriaQueryInput();
-                if(texto==null)
+                ProductoQueryInput input = new ProductoQueryInput();
+                if( texto == null)
                 {
                     texto = "";
                 }
-                input.texto = texto ;
+                input.texto = texto;
                 input.pagina = pagina;
                 input.tamanio = tamanio;
                 input.idUsuario = 0;
                 DataQuery data = _manager.Search(input);
-                CheckStatus chekStatus = new CheckStatus();
+                CheckStatus CheckPermiso = new CheckStatus();
                 if(data.apiEstado.Equals(Status.Error))
                 {
                     return NotFound(data);
                 }
                 return Ok(data);
+
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(LoggingEvents.ERROR, ex, ex.Message);
+                return new EmptyResult();
+            }
+
+        }
+
+
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(ProductoIndOutput), 200)]
+        [ProducesResponseType(typeof(ProductoIndOutput), 404)]
+        public IActionResult Get(int id)
+        {
+            try
+            {
+                ProductoIndOutput data = (ProductoIndOutput)_manager.SingleById(id, 0);
+
+                if (data.apiEstado.Equals(Status.Error))
+                {
+                    return NotFound(data);
+                }
+                return Ok(data);
+
             }
             catch(Exception ex)
             {
@@ -67,40 +94,15 @@ namespace SuperTienda.ServiceApp.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        [ProducesResponseType(typeof(SubCategoriaIndOutput), 200)]
-        [ProducesResponseType(typeof(SubCategoriaIndOutput), 404)]
-        public IActionResult Get(int id)
-        {
-            
-            try
-            {
-                SubCategoriaIndOutput data = (SubCategoriaIndOutput)_manager.SingleById(id, 0);
-
-                if (data.apiEstado.Equals(Status.Error))
-                {
-                    return NotFound(data);
-                }
-                return Ok(data);
-            }
-            
-            catch (Exception ex)
-            {
-                _logger.LogError(LoggingEvents.SERVICE_ERROR, ex, ex.Message);
-                return new EmptyResult();
-            }
-
-        }
-        
         [HttpPost]
         [ProducesResponseType(typeof(CheckStatus), 201)]
         [ProducesResponseType(typeof(CheckStatus), 404)]
-        public IActionResult Post([FromBody]SubCategoriaInput input)
+        public IActionResult Post([FromBody]ProductoInput input)
         {
             try
             {
                 CheckStatus checkStatus = null;
-                if (ModelState.IsValid)
+                if(ModelState.IsValid)
                 {
                     checkStatus = _manager.Create(input);
 
@@ -109,15 +111,17 @@ namespace SuperTienda.ServiceApp.Controllers
                         return StatusCode(422, checkStatus);
                     }
                     return StatusCode(201, checkStatus);
+
                 }
                 else
                 {
                     checkStatus = new CheckStatus(Status.Error, Mensaje.InputInvalido);
                     return StatusCode(422, checkStatus);
                 }
-                
+
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 _logger.LogError(LoggingEvents.SERVICE_ERROR, ex, ex.Message);
                 return new EmptyResult();
@@ -127,22 +131,21 @@ namespace SuperTienda.ServiceApp.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(CheckStatus), 200)]
         [ProducesResponseType(typeof(CheckStatus), 404)]
-        public IActionResult Put(int id, [FromBody]SubCategoriaInput input)
+        public IActionResult Put(int id, [FromBody]ProductoInput input)
         {
+
             try
             {
                 CheckStatus checkStatus = null;
-                if (ModelState.IsValid)
+                if(ModelState.IsValid)
                 {
-
-                    input.idSubCategoria = id;
+                    input.idProducto = id;
                     checkStatus = _manager.Update(input);
 
                     if (checkStatus.apiEstado.Equals(Status.Error))
                     {
                         return StatusCode(422, checkStatus);
                     }
-
                     return Ok(checkStatus);
                 }
                 else
@@ -150,8 +153,9 @@ namespace SuperTienda.ServiceApp.Controllers
                     checkStatus = new CheckStatus(Status.Error, Mensaje.InputInvalido);
                     return StatusCode(422, checkStatus);
                 }
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 _logger.LogError(LoggingEvents.SERVICE_ERROR, ex, ex.Message);
                 return new EmptyResult();
@@ -166,19 +170,18 @@ namespace SuperTienda.ServiceApp.Controllers
             try
             {
                 CheckStatus checkStatus = _manager.Delete(id, 0);
-
                 if (checkStatus.apiEstado.Equals(Status.Error))
                 {
                     return StatusCode(422, checkStatus);
                 }
                 return Ok(checkStatus);
             }
-
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 _logger.LogError(LoggingEvents.ERROR, ex, ex.Message);
                 return new EmptyResult();
             }
         }
+
     }
 }

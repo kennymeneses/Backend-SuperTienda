@@ -93,6 +93,98 @@ namespace SuperTienda.ServiceApp.Controllers
             }
         }
 
+        [HttpPost]
+        [ProducesResponseType(typeof(CheckStatus), 201)]
+        [ProducesResponseType(typeof(CheckStatus), 404)]
+        public IActionResult Post([FromBody]UsuarioInput input)
+        {
+
+            try
+            {
+                CheckStatus checkStatus = null;
+                if (ModelState.IsValid)
+                {
+                    checkStatus = _manager.Create(input);
+
+                    if (checkStatus.apiEstado.Equals(Status.Error))
+                    {
+                        return StatusCode(422, checkStatus);
+                    }
+                    return StatusCode(201, checkStatus);
+                }
+                else
+                {
+                    checkStatus = new CheckStatus(Status.Error, Mensaje.InputInvalido);
+                    return StatusCode(422, checkStatus);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                _logger.LogError(LoggingEvents.SERVICE_ERROR, ex, ex.Message);
+                return new EmptyResult();
+            }
+
+        }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType(typeof(CheckStatus), 200)]
+        [ProducesResponseType(typeof(CheckStatus), 404)]
+        public IActionResult Put(int id, [FromBody]UsuarioInput input)
+        {
+
+            try
+            {
+                CheckStatus checkStatus = null;
+                if (ModelState.IsValid)
+                {
+
+                    input.id = id;
+                    checkStatus = _manager.Update(input);
+
+                    if (checkStatus.apiEstado.Equals(Status.Error))
+                    {
+                        return StatusCode(422, checkStatus);
+                    }
+                    return Ok(checkStatus);
+                }
+                else
+                {
+                    checkStatus = new CheckStatus(Status.Error, Mensaje.InputInvalido);
+                    return StatusCode(422, checkStatus);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(LoggingEvents.SERVICE_ERROR, ex, ex.Message);
+                return new EmptyResult();
+            }
+
+        }
+
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(CheckStatus), 200)]
+        [ProducesResponseType(typeof(CheckStatus), 404)]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                CheckStatus checkStatus = _manager.Delete(id, 0);
+
+                if (checkStatus.apiEstado.Equals(Status.Error))
+                {
+                    return StatusCode(422, checkStatus);
+                }
+                return Ok(checkStatus);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(LoggingEvents.ERROR, ex, ex.Message);
+                return new EmptyResult();
+            }
+        }
 
     }
 }

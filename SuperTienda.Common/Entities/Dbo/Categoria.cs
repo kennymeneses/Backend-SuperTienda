@@ -17,6 +17,10 @@ namespace SuperTienda.Common.Entities
 
         [Column("NombreCategoria")]
         public string NombreCategoria { get; set; }
-        
+
+        [Column("Estado")]
+        public int Estado { get; set; }
+
+
     }
 }

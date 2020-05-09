@@ -79,6 +79,7 @@ namespace SuperTienda.BusinessLayer.Manager.CategoriaManagement
 
             Categoria categoria = new Categoria();
             categoria.NombreCategoria = input.nombreCategoria;
+            categoria.Estado = input.estado;
 
             try
             {
@@ -136,9 +137,10 @@ namespace SuperTienda.BusinessLayer.Manager.CategoriaManagement
 
             if(categoria != null)
             {
-
+                categoria.Eliminado = true;
                 try
                 {
+                    
                     _repository.Update<Categoria>(categoria);
                     SaveChanges();
                     checkstatus = new CheckStatus(Status.Ok, 

@@ -102,6 +102,7 @@ namespace SuperTienda.BusinessLayer.Manager.SubCategoriaManagement
             {
                 subcategoria.NombreSubCategoria = input.nombreSubCategoria;
                 subcategoria.IdCategoria = input.idCategoria;
+                subcategoria.Estado = input.estado;
                 subcategoria.Eliminado = false;
                 try
                 {
