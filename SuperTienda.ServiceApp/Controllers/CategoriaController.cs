@@ -10,6 +10,8 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using SuperTienda.BusinessLayer.Manager.CategoriaManagement;
 using SuperTienda.Common.BussinesObjects.Dbo;
 using SuperTienda.Common.Configuration;
@@ -22,6 +24,7 @@ namespace SuperTienda.ServiceApp.Controllers
 {
     [Route("api/categorias")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CategoriaController : BaseController
     {
 
