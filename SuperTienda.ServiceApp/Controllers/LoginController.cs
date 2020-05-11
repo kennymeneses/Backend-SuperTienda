@@ -37,13 +37,12 @@ namespace SuperTienda.ServiceApp.Controllers
             _repository = repository;
         }
 
-        private IActionResult BuildToken(UsuarioInput infocuenta, int id)
+        private IActionResult BuildToken(LoginInput infocuenta, int id)
         {
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.UniqueName, infocuenta.email),
-                new Claim(JwtRegisteredClaimNames.NameId, infocuenta.id.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, infocuenta.correo),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuracion["Llave_secreta"]));
@@ -69,7 +68,7 @@ namespace SuperTienda.ServiceApp.Controllers
         [HttpPost]
         [ProducesResponseType(typeof(CheckStatus),201)]
         [ProducesResponseType(typeof(CheckStatus),404)]
-        public IActionResult Post([FromBody]UsuarioInput input)
+        public IActionResult Post([FromBody]LoginInput input)
         {
 
             CheckStatus checkStatus = null;
@@ -79,7 +78,7 @@ namespace SuperTienda.ServiceApp.Controllers
             { 
                 try
                 {
-                    perfil = _repository.Single<Usuario>(p => p.Email == input.email);
+                    perfil = _repository.Single<Usuario>(p => p.Email == input.correo);
 
                     if (perfil.Password == input.contrasena)
                     {

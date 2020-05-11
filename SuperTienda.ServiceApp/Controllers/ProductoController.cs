@@ -39,7 +39,7 @@ namespace SuperTienda.ServiceApp.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(DataQuery), 200)]
         [ProducesResponseType(typeof(DataQuery), 404)]
-        public IActionResult Get(string texto = "", int pagina = 0, int tamanio = 10)
+        public IActionResult Get(string texto = "", int pagina = 0, int tamanio = 10, int idsubsubcategoria=20)
         {
 
             try
@@ -53,6 +53,7 @@ namespace SuperTienda.ServiceApp.Controllers
                 input.pagina = pagina;
                 input.tamanio = tamanio;
                 input.idUsuario = 0;
+                input.idSubSubCategoria =idsubsubcategoria;
                 DataQuery data = _manager.Search(input);
                 CheckStatus CheckPermiso = new CheckStatus();
                 if(data.apiEstado.Equals(Status.Error))
