@@ -8,6 +8,7 @@ namespace SuperTienda.Common.BussinesObjects.Dbo
     public class UsuarioInput : BaseInputEntity
     {
         public int id { get; set; }
+
         public string nombres { get; set; }
 
         public string apellidos { get; set; }
@@ -15,12 +16,11 @@ namespace SuperTienda.Common.BussinesObjects.Dbo
         public string email { get; set; }
 
         public string contrasena { get; set; }
-
+            
         public string imagenurl { get; set; }
 
         public int estado { get; set; }
-        
-        
+                
         public UsuarioInput()
         {
             id = 0;
