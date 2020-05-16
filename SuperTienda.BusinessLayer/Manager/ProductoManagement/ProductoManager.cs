@@ -46,9 +46,11 @@ namespace SuperTienda.BusinessLayer.Manager.ProductoManagement
 
         public SingleQuery SingleById(int id, int idUsuario)
         {
+
             ProductoIndOutput producto = new ProductoIndOutput();
 
             producto = _repository.ExecuteProcedureSingle<ProductoIndOutput>(Consultas.DboProductoInd, id);
+
             if (producto == null)
             {
                 producto = new ProductoIndOutput

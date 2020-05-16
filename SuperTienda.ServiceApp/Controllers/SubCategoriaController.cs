@@ -24,7 +24,7 @@ namespace SuperTienda.ServiceApp.Controllers
 {
     [Route("api/subcategorias")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class SubCategoriaController : BaseController
     {
 

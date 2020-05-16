@@ -24,7 +24,7 @@ namespace SuperTienda.ServiceApp.Controllers
 {
     [Route("api/productos")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ProductoController : BaseController
     {
 
