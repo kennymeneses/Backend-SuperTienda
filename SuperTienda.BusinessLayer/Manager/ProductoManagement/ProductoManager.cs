@@ -35,7 +35,9 @@ namespace SuperTienda.BusinessLayer.Manager.ProductoManagement
             ProductoQueryInput queryInput = (ProductoQueryInput)input;
 
             SqlParameter[] sqlParams =
-            {   new SqlParameter("@idsubsubcategoria", queryInput.idSubSubCategoria),
+            {   
+                new SqlParameter("@texto",queryInput.texto),
+                new SqlParameter("@idsubsubcategoria", queryInput.idSubSubCategoria),
                 new SqlParameter("@tamanio", queryInput.tamanio),
                 new SqlParameter("@pagina", queryInput.pagina)
             };
